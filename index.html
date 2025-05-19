@@ -819,17 +819,17 @@
 
     <script>
         const dummyProduct =   {
-            "title": "",
-            "description": "",
+            "title": "Long Statement Earrings",
+            "description": "Statement Earrings",
             "image": "p1/WhatsApp Image 2025-02-27 at 10.26.12 PM copy.jpeg",
-            "link": ""
+            "link": "https://www.amazon.in/Statement-Earring-Ideal-making-Looks/dp/B0DZ2TPZRY/"
         }
             document.addEventListener("DOMContentLoaded", () => {
             fetch("p1/poolu.json")
                 .then(res => res.json())
                 .then(data => {
                     const totalLength = data.length;
-                    let leftSpace = Math.floor(totalLength/3);
+                    let leftSpace = Math.abs(3-Math.floor(totalLength%3));
                     const container = document.getElementById("collections-container");
                     let parent = document.createElement("div")
                     parent.className = "collection-grid";
